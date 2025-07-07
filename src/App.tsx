@@ -1,17 +1,24 @@
 import React from 'react';
-import NavBar from './components/NavBar';
-import Header from './components/Header';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import Dashboard from './components/Dashboard';
+import './App.css';
 
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#1976d2',
+    },
+  },
+});
 
 const App: React.FC = () => {
   return (
-    <div>
-      <Header />
-      <NavBar />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="app">
+        <Dashboard />
+      </div>
+    </ThemeProvider>
   );
 };
 
 export default App;
-
-

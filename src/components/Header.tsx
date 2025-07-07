@@ -1,7 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
-import { AppBar, Toolbar, Typography, IconButton, Badge } from '@mui/material';
-import { AccountCircle, Notifications, ExitToApp } from '@mui/icons-material';
+import { AppBar, Toolbar, Typography, IconButton, Badge, Avatar } from '@mui/material';
+import {  Notifications, ExitToApp } from '@mui/icons-material';
+import userIcon from '../images/profile_logo.png'
+
 
 const Header: React.FC = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -64,7 +66,7 @@ const Header: React.FC = () => {
           {formatDateTime(currentTime)}
         </Typography>
         <IconButton color="inherit">
-          <AccountCircle />
+          <Avatar src={userIcon} alt="User Profile" />
         </IconButton>
         <IconButton color="inherit">
           <ExitToApp />
